@@ -27,6 +27,7 @@ def get_weekdays():
 
 def get_dates():
   dates = datetime.now()
+  dates=dates.strftime("%Y-%m-%d")
   return dates
 
 def get_weather():
