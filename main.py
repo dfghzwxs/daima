@@ -10,7 +10,7 @@ import time
 local_time = time.localtime(time.time())  
 week_index = local_time.tm_wday  
 week_list = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
-data=week_list[week_index]
+weekday=week_list[week_index]
 dates=time.strftime('%Y-%m-%d',time.localtime(time.time()))
 
 today = datetime.now()
@@ -54,6 +54,6 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
-data = {"dates":{"value":dates},"date":{"value":data},"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"dates":{"value":dates},"weekday":{"value":weekday},"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
