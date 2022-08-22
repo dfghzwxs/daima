@@ -6,13 +6,12 @@ import requests
 import os
 import random
 import time
-import datatime
 
 local_time = time.localtime(time.time())  
 week_index = local_time.tm_wday  
 week_list = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
 data=week_list[week_index]
-date=datetime.date.today()
+date=time.strftime('%Y-%m-%d',time.localtime(time.time()))
 
 today = datetime.now()
 start_date = os.environ['START_DATE']
