@@ -26,8 +26,9 @@ def get_weekdays():
   return weekday
 
 def get_dates():
-  dates=time.strftime('%Y-%m-%d',time.localtime(time.time()))
-  return dates
+  #dates=time.strftime('%Y-%m-%d',time.localtime(time.time()))
+  wow=datetime.datetime.now()
+  print(wow.year,wow.month,wow.day,sep="-")
 
 def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
